@@ -22,7 +22,7 @@ class database
 
     public function DBInsert($group,$first,$last)
     {
-	    $query = $this->db->prepare("INSERT INTO Groups (GroupName,FirstPost,LastPost) Values (:GroupName, :FirstPost, :LastPost)");
+        $query = $this->db->prepare("INSERT INTO Groups (GroupName,FirstPost,LastPost) Values (:GroupName, :FirstPost, :LastPost)");
 	    $query->execute(array(':GroupName' => $group,':FirstPost' => $first, ':LastPost' => $last));
         echo "Added: " .$group.":".$first.":".$last.":"."\n";
 	}
