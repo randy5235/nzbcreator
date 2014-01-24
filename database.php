@@ -22,7 +22,6 @@ class database
 
     public function DBInsert($group,$first,$last)
     {
-	    //$db = new PDO('mysql:host=localhost;dbname=nzb_creator;charset=utf8','root','SuperMountain23',array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 	    $query = $this->db->prepare("INSERT INTO Groups (GroupName,FirstPost,LastPost) Values (:GroupName, :FirstPost, :LastPost)");
 	    $query->execute(array(':GroupName' => $group,':FirstPost' => $first, ':LastPost' => $last));
         echo "Added: " .$group.":".$first.":".$last.":"."\n";
