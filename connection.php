@@ -32,9 +32,17 @@ if( PEAR::isError($ret)) {
 	    $count=0;
         foreach($groups as $group) {
             	if (stristr($group['group'],"alt.bin")){
+                    $compare = $dbconnection->DBCompare($group['group']);
+                    if ($compare)
+                    {
+                        print_r($compare);
+                        echo " we have a match!\n";
+                    }else{
+
 		            $dbconnection->DBInsert($group['group'],$group['first'],$group['last']);
-		            echo $group['group'].":".$group['first'].":".$group['last'].":".$count."\n";
+		            //echo $group['group'].":".$group['first'].":".$group['last'].":".$count."\n";
            	        $count++;
+                    }
 		        }
         }
     }
