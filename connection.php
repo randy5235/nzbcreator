@@ -48,8 +48,10 @@ if( PEAR::isError($ret)) {
                     $compare = $dbconnection->DBCompare($group['group']);
                     if ($compare)
                     {
-                        print_r($compare);
-                        echo " we have a match!\n";
+                       //print_r($compare);
+                       // echo " we have a match!\n";
+                        $update =$dbconnection->DBUpdate($compare,$group['group'],$group['first'],$group['last']);
+
                     }else{
 
 		            $dbconnection->DBInsert($group['group'],$group['first'],$group['last']);

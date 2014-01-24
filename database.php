@@ -15,7 +15,7 @@ class database
         }
         catch (PDOException $e)
         {
-           echo 'Could not connect to the database'.$e->getMessage();
+           echo 'Could not connect to the database: '.$e->getMessage();
         }
     }
 
@@ -34,9 +34,15 @@ class database
         return $result = $query->fetch(PDO::FETCH_ASSOC);
 
     }
-    public function DBUpdate($group,$first,$last)
+    public function DBUpdate($compare,$group,$first,$last)
     {
-        // test for new stuff with update
+
+        if ($compare['FirstPost'] != $first || $compare['LastPost'] != $last)
+        {
+            $query = $this->db->prepare("UPDATE Groups SET FirstPost=:FirstPost,LastPost=:LastPost WHERE GroupName = :GroupName ");
+            $query->execute(array(':GroupName' => $group, ':FirstPost' => $first, ':LastPost' => $last));
+            echo "updated $group values!\n";
+        }
     }
 }
 ?>	 
