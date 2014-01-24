@@ -36,7 +36,7 @@ class database
     }
     public function DBUpdate($group,$first,$last)
     {
-        // test for new stuff
+        // test for new stuff with update
     }
 }
 ?>	 
