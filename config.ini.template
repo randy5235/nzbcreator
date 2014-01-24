@@ -1,11 +1,12 @@
+/*Rename this file to config.ini */
 [Database Config]
 host = localhost
-databasename = nzb_creator
-username = root
-password = SuperMountain23
+databasename = dbname
+username = username
+password = password
 
 
 [Newsgroup config]
-newsserver = news.usenetserver.com
-news_username = txpsycho
-news_password = HeadhunterV1.3
+newsserver = newservername
+news_username = newserverusername
+news_password = newsserverpassword
