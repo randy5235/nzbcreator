@@ -7,15 +7,15 @@
 
 class database
 {
-    public function __construct()
+    public function __construct($dsn,$username,$password)
     {
         try
         {
-            $this->db = new PDO('mysql:host=localhost;dbname=nzb_creator;charset=utf8','root','SuperMountain23',array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->db = new PDO($dsn,$username,$password,array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
-        catch (Exception $e)
+        catch (PDOException $e)
         {
-            throw new Exception('Could not connect to the database', 0, $e);
+           echo 'Could not connect to the database'.$e->getMessage();
         }
     }
 
