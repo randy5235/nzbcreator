@@ -2,3 +2,7 @@
 This file may be redistributed and given away
 Please retain credit to original authors */
 
+Rename the config.ini.template to config.ini
+Update the values in the config.ini file to use your credentials.
+
+

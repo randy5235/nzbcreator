@@ -1,4 +1,5 @@
-use nzb_creator;
+CREATE DATABASE IF NOT EXISTS nzb_creator;
+USE nzb_creator;
 DROP TABLE IF EXISTS Groups;
 CREATE TABLE `Groups` (
   `GroupID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
