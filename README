@@ -4,5 +4,5 @@ Please retain credit to original authors */
 
 Rename the config.ini.template to config.ini
 Update the values in the config.ini file to use your credentials.
-
+Please do not store this file within the webroot of your webserver as a misconfiguration could expose your credentials as plain text.
 
